@@ -57,4 +57,11 @@ class ArrayUtilTest {
 		assertArrayEquals(sps, products);
 
 	}
+	
+	@Test
+	void testTriplets() {
+		int[] array = {2,3,4,5,7};
+		
+
+	}
 }

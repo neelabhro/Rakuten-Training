@@ -1,5 +1,9 @@
 package com.rakuten.prj.util;
-import java.util.Arrays; 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.rakuten.prj.entity.Triplet; 
 
 	
 
@@ -41,4 +45,32 @@ public class ArrayUtil {
 			}
 		}
 	}
+	
+	public static List<Triplet> printTriplets(int[] data){
+        Arrays.sort(data); 
+        List<Triplet> ls = new ArrayList<>();
+        Triplet t = new Triplet();
+        for (int i = data.length - 1; i >= 0; i--) { 
+            int j = 0; 
+            int k = i - 1; 
+            while (j < k) { 
+                if (data[i] == data[j] + data[k]) { 
+                	t.setFirst(data[j]);
+                	t.setSecond(data[j]);
+                	t.setSum(data[i]);
+                   
+                } 
+                else if (data[i] > data[j] + data[k]) 
+                    j += 1; 
+                else
+                    k -= 1; 
+            }  
+        }
+        ls.add(t);
+        return ls;
+	    } 
+	
+	
+	
+	
 }
